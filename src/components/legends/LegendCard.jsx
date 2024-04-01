@@ -1,6 +1,6 @@
 
 
-const LegendCard = () => {
+const LegendCard = ({info}) => {
     return (
         <div>
             legendcard...
