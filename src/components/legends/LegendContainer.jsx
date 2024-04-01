@@ -24,19 +24,20 @@ const LegendContainer = () => {
             onChange={handleSearch}
           ></FormControl>
         </Form>
-
-        <Row
-          xs={1}
-          sm={2}
-          md={3}
-          lg={4}
-          xl={5}
-          className="justify-content-center g-3"
-        >
-          {filteredData.map((info) => {
-            return <LegendCard key={info.id} info={info}></LegendCard>;
-          })}
-        </Row>
+        <Container className="card-container">
+          <Row
+            xs={1}
+            sm={2}
+            md={3}
+            lg={4}
+            xl={5}
+            className="justify-content-center g-3"
+          >
+            {filteredData.map((info) => {
+              return <LegendCard key={info.id} info={info}></LegendCard>;
+            })}
+          </Row>
+        </Container>
       </Container>
     );
 }
