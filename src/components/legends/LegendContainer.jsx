@@ -13,8 +13,7 @@ const LegendContainer = () => {
     const handleSearch = (e) => {
         setSearchData(e.target.value)
     }
-    const filteredData = data
-    console.log(filteredData)
+    const filteredData = data.filter((e)=>e.name.toLowerCase().includes(searchData.trim().toLowerCase()))
     return (
       <Container>
         <Form>
@@ -26,8 +25,15 @@ const LegendContainer = () => {
           ></FormControl>
         </Form>
 
-        <Row xs={1} sm={2} md={3} lg={4} xl={5} className="justify-content-center g-3">
-          {data.map((info) => {
+        <Row
+          xs={1}
+          sm={2}
+          md={3}
+          lg={4}
+          xl={5}
+          className="justify-content-center g-3"
+        >
+          {filteredData.map((info) => {
             return <LegendCard key={info.id} info={info}></LegendCard>;
           })}
         </Row>
